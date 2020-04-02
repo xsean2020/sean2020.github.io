@@ -6,10 +6,29 @@
     <description>Recent content on Hello Friend NG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Apr 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2020 11:36:23 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bb</title>
+      <link>/life/bb/</link>
+      <pubDate>Thu, 02 Apr 2020 13:22:45 +0800</pubDate>
+      
+      <guid>/life/bb/</guid>
+      <description>JanusGraphFiles JanusGraph 部署文件及一些技术文档
+正式版本部署  host: kunlun1.prod.bbdops.com kunlun2.prod.bbdops.com directory: /data1/janusgraph_workspaces/janusgraph-0.3.1-hadoop2  dev,qa环境部署 dev  host: kunlun[6-9].bbdops.com directory /data2/janusgraph_workspaces/janusgraph-0.3.1-hadoop2  qa  host: kunlun[17,18].bbdops.com directory /data2/janusgraph_workspaces/janusgraph-0.3.1-hadoop2  </description>
+    </item>
+    
+    <item>
+      <title>Posts</title>
+      <link>/posts/</link>
+      <pubDate>Thu, 02 Apr 2020 11:36:23 +0800</pubDate>
+      
+      <guid>/posts/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>About</title>
