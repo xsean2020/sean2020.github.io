@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>untagged on Hello Friend NG</title>
+    <title>untagged on 老码识图</title>
     <link>/tags/untagged/</link>
-    <description>Recent content in untagged on Hello Friend NG</description>
+    <description>Recent content in untagged on 老码识图</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-CN</language>
     <lastBuildDate>Thu, 02 Apr 2020 11:36:23 +0800</lastBuildDate>
     
 	<atom:link href="/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
