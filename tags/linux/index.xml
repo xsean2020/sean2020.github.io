@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>@sean</copyright>
-    <lastBuildDate>Fri, 03 Apr 2020 21:14:01 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2020 23:30:19 +0800</lastBuildDate>
     
 	<atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CURL FTP 操作</title>
+      <link>/posts/2020/04/curl-ftp-%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Fri, 03 Apr 2020 23:30:19 +0800</pubDate>
+      
+      <guid>/posts/2020/04/curl-ftp-%E6%93%8D%E4%BD%9C/</guid>
+      <description>文件上传 curl –u username:password -T target.zip ftp://ip:port/target.zip 文件下载 curl –u username:password ftp://ip:port/target.zip -o target.zip 文件删除 curl –u username:password ftp://ip:port/target.zip -Q &#39;DELE target.zip&#39; </description>
+    </item>
     
     <item>
       <title>SSH跳板设置</title>

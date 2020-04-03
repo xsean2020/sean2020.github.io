@@ -4,17 +4,17 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="map[name:xsean]">
-<meta name="description" content="ssh 跳板机设置 ssh -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -p 22 root@target.machine 远程拷贝 # 重远程机拷贝到本地 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r lmx@target.machine:~/targetFile . # 本地拷贝目标机器 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r targetFile lmx@target.machine:~ " />
-<meta name="keywords" content="blog, linux, shell, ssh, scp" />
+<meta name="author" content="archetypes true true true true content This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. data false false false false true false false true layouts xsean public true monokai 10 ">
+<meta name="description" content="文件上传 curl –u username:password -T target.zip ftp://ip:port/target.zip 文件下载 curl –u username:password ftp://ip:port/target.zip -o target.zip 文件删除 curl –u username:password ftp://ip:port/target.zip -Q &#39;DELE target.zip&#39; " />
+<meta name="keywords" content="blog, linux, shell, curl, ftp" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="/posts/2020/04/ssh%E8%B7%B3%E6%9D%BF%E8%AE%BE%E7%BD%AE/" />
+<link rel="canonical" href="/posts/2020/04/curl-ftp-%E6%93%8D%E4%BD%9C/" />
 
 
     <title>
         
-            SSH跳板设置 :: 老码识图  — 疯子记录
+            CURL FTP 操作 :: 老码识图  — 疯子记录
         
     </title>
 
@@ -30,30 +30,26 @@
 
 
 
-<meta itemprop="name" content="SSH跳板设置">
-<meta itemprop="description" content="ssh跳板机，及通过跳板机远程拷贝">
-<meta itemprop="datePublished" content="2020-04-03T21:14:01&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-03T21:14:01&#43;08:00" />
-<meta itemprop="wordCount" content="56">
+<meta itemprop="name" content="CURL FTP 操作">
+<meta itemprop="description" content="文件上传 curl –u username:password -T target.zip ftp://ip:port/target.zip 文件下载 curl –u username:password ftp://ip:port/target.zip -o target.zip 文件删除 curl –u username:password ftp://ip:port/target.zip -Q &#39;DELE target.zip&#39; ">
+<meta itemprop="datePublished" content="2020-04-03T23:30:19&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-03T23:30:19&#43;08:00" />
+<meta itemprop="wordCount" content="22">
 <meta itemprop="image" content="/"/>
 
 
 
-<meta itemprop="keywords" content="linux,shell,ssh,scp," /><meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="linux,shell,curl,ftp," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
-<meta name="twitter:title" content="SSH跳板设置"/>
-<meta name="twitter:description" content="ssh跳板机，及通过跳板机远程拷贝"/>
+<meta name="twitter:title" content="CURL FTP 操作"/>
+<meta name="twitter:description" content="文件上传 curl –u username:password -T target.zip ftp://ip:port/target.zip 文件下载 curl –u username:password ftp://ip:port/target.zip -o target.zip 文件删除 curl –u username:password ftp://ip:port/target.zip -Q &#39;DELE target.zip&#39; "/>
 
 
 
-    <meta property="article:section" content="linux" />
-
-    <meta property="article:section" content="shell" />
 
 
-
-    <meta property="article:published_time" content="2020-04-03 21:14:01 &#43;0800 CST" />
+    <meta property="article:published_time" content="2020-04-03 23:30:19 &#43;0800 CST" />
 
 
 
@@ -123,19 +119,18 @@
 
         <article>
             <h1 class="post-title">
-                <a href="/posts/2020/04/ssh%E8%B7%B3%E6%9D%BF%E8%AE%BE%E7%BD%AE/">SSH跳板设置</a>
+                <a href="/posts/2020/04/curl-ftp-%E6%93%8D%E4%BD%9C/">CURL FTP 操作</a>
             </h1>
 
             
 
             <div class="post-content">
-                <h2 id="ssh-跳板机设置">ssh 跳板机设置</h2>
-<pre><code>ssh -o &quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&quot; -p 22 root@target.machine
-</code></pre><h2 id="远程拷贝">远程拷贝</h2>
-<pre><code># 重远程机拷贝到本地
-scp -o &quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&quot; -P 22 -r lmx@target.machine:~/targetFile .
-# 本地拷贝目标机器
-scp -o &quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&quot; -P 22 -r targetFile lmx@target.machine:~
+                <h3 id="文件上传">文件上传</h3>
+<pre><code>curl –u username:password -T target.zip ftp://ip:port/target.zip
+</code></pre><h3 id="文件下载">文件下载</h3>
+<pre><code>curl –u username:password ftp://ip:port/target.zip  -o target.zip
+</code></pre><h3 id="文件删除">文件删除</h3>
+<pre><code>curl –u username:password ftp://ip:port/target.zip -Q 'DELE target.zip'
 </code></pre>
             </div>
         </article>
@@ -144,12 +139,12 @@ scp -o &quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&quot; -P 22
 
         <div class="post-info">
                 <p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="/tags/linux">linux</a></span><span class="tag"><a href="/tags/shell">shell</a></span><span class="tag"><a href="/tags/ssh">ssh</a></span><span class="tag"><a href="/tags/scp">scp</a></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="/tags/linux">linux</a></span><span class="tag"><a href="/tags/shell">shell</a></span><span class="tag"><a href="/tags/curl">curl</a></span><span class="tag"><a href="/tags/ftp">ftp</a></span>
                 </p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-04-03 21:14 &#43;0800</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-04-03 23:30 &#43;0800</p>
         </div>
 
         
@@ -161,14 +156,14 @@ scp -o &quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&quot; -P 22
 
                 <div class="pagination__buttons">
                     
-                        <span class="button previous">
-                            <a href="/posts/2020/04/curl-ftp-%E6%93%8D%E4%BD%9C/">
-                                <span class="button__icon">←</span>
-                                <span class="button__text">CURL FTP 操作</span>
+
+                    
+                        <span class="button next">
+                            <a href="/posts/2020/04/ssh%E8%B7%B3%E6%9D%BF%E8%AE%BE%E7%BD%AE/">
+                                <span class="button__text">SSH跳板设置</span>
+                                <span class="button__icon">→</span>
                             </a>
                         </span>
-                    
-
                     
                 </div>
             </div>

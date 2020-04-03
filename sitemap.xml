@@ -3,12 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tags/curl/</loc>
+    <lastmod>2020-04-03T23:30:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2020/04/curl-ftp-%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2020-04-03T23:30:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ftp/</loc>
+    <lastmod>2020-04-03T23:30:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2020-04-03T23:30:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-04-03T23:30:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/shell/</loc>
+    <lastmod>2020-04-03T23:30:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-04-03T23:30:19+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/lives/</loc>
     <lastmod>2020-04-03T23:07:21+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/lives/2020/04/new/</loc>
+    <loc>/lives/2020/04/%E6%97%A0%E9%A2%98/</loc>
     <lastmod>2020-04-03T23:07:21+08:00</lastmod>
   </url>
   
@@ -18,27 +53,12 @@
   </url>
   
   <url>
-    <loc>/tags/linux/</loc>
-    <lastmod>2020-04-03T21:14:01+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/linux/</loc>
     <lastmod>2020-04-03T21:14:01+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/</loc>
-    <lastmod>2020-04-03T21:14:01+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/scp/</loc>
-    <lastmod>2020-04-03T21:14:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/shell/</loc>
     <lastmod>2020-04-03T21:14:01+08:00</lastmod>
   </url>
   
@@ -54,11 +74,6 @@
   
   <url>
     <loc>/posts/2020/04/ssh%E8%B7%B3%E6%9D%BF%E8%AE%BE%E7%BD%AE/</loc>
-    <lastmod>2020-04-03T21:14:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-04-03T21:14:01+08:00</lastmod>
   </url>
   
