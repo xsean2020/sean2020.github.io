@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lives on 老码识图</title>
+    <link>/lives/</link>
+    <description>Recent content in Lives on 老码识图</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>@sean</copyright>
+    <lastBuildDate>Fri, 03 Apr 2020 23:07:21 +0800</lastBuildDate>
+    
+	<atom:link href="/lives/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New</title>
+      <link>/lives/2020/04/new/</link>
+      <pubDate>Fri, 03 Apr 2020 23:07:21 +0800</pubDate>
+      
+      <guid>/lives/2020/04/new/</guid>
+      <description>测试页面 </description>
+    </item>
+    
+  </channel>
+</rss>
