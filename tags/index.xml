@@ -6,6 +6,7 @@
     <description>Recent content in Tags on 老码识图</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+    <copyright>@sean</copyright>
     <lastBuildDate>Fri, 03 Apr 2020 21:14:01 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -44,15 +45,6 @@
       <pubDate>Fri, 03 Apr 2020 21:14:01 +0800</pubDate>
       
       <guid>/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>untagged</title>
-      <link>/tags/untagged/</link>
-      <pubDate>Thu, 02 Apr 2020 11:36:23 +0800</pubDate>
-      
-      <guid>/tags/untagged/</guid>
       <description></description>
     </item>
     

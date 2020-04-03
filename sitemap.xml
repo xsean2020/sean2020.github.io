@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/lives/</loc>
+    <lastmod>2020-04-03T23:07:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/lives/2020/04/new/</loc>
+    <lastmod>2020-04-03T23:07:21+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <lastmod>2020-04-03T21:14:01+08:00</lastmod>
   </url>
@@ -43,7 +53,7 @@
   </url>
   
   <url>
-    <loc>/posts/ssh_proxy/</loc>
+    <loc>/posts/2020/04/ssh%E8%B7%B3%E6%9D%BF%E8%AE%BE%E7%BD%AE/</loc>
     <lastmod>2020-04-03T21:14:01+08:00</lastmod>
   </url>
   
@@ -53,28 +63,17 @@
   </url>
   
   <url>
-    <loc>/tags/untagged/</loc>
-    <lastmod>2020-04-02T11:36:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/life/</loc>
-    <lastmod>2020-04-02T11:36:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-04-02T11:36:23+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/about/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/search/</loc>
-    <priority>0.1</priority>
+    <loc>/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/archives/</loc>
   </url>
   
 </urlset>
