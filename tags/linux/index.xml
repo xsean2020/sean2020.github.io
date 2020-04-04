@@ -34,6 +34,15 @@ ssh -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quo
     </item>
     
     <item>
+      <title>技术</title>
+      <link>/posts/</link>
+      <pubDate>Thu, 02 Apr 2020 11:36:23 +0800</pubDate>
+      
+      <guid>/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>/about/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
