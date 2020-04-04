@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="archetypes true true true true content This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. data false false false false true false false true layouts xsean2020 public true monokai 10 ">
+<meta name="description" content="初次使用aws-go-jdk 操作bucket 失败， 之前没接触过s3 api,所以安装官方demo 写了一个 ，追后发现死活不成功;不成功的原因在于， 创建bucket 的时候一定要加&amp;rdquo;/&amp;rdquo; 作为前缀，不然bucket name 回拼接到host，上导致dns无法解析， 具体原因就自己看源码吧， 个人觉得源码写的太绕了，花式太多，不简洁所以没耐力看完，仅此记录一下避免以后再出现;
+ input := &amp;amp;s3.CreateBucketInput{Bucket: aws.String(&amp;quot;/bucketName&amp;rdquo;)}  官方demo 如下:
+ input := &amp;amp;s3.CreateBucketInput{ Bucket: aws.String(&amp;quot;bucketName&amp;quot;), CreateBucketConfiguration: &amp;amp;s3.CreateBucketConfiguration{LocationConstraint: aws.String(&amp;quot;&amp;quot;)}, } // Create the S3 service client with the shared session. This will // automatically use the S3 custom endpoint configured in the custom // endpoint resolver wrapping the default endpoint resolver. svc := s3.New(sess) result2, err := svc.CreateBucket(input2) if err !" />
+<meta name="keywords" content="blog, golang, aws-go-jdk, s3" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="/posts/2020/04/aws-go-jdk-%E5%88%9B%E5%BB%BAbucket%E5%A4%B1%E8%B4%A5/" />
+
+
+    <title>
+        
+            aws-go-jdk 创建bucket失败 :: 老码识图  — xsean2020&#39;s blog
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.7bfbbe12786fa0ded4b4c0d792cbb36a5bd0bdb0b856dde57aa7b1f6fe0f2b87.css">
+
+
+
+
+<meta itemprop="name" content="aws-go-jdk 创建bucket失败">
+<meta itemprop="description" content="初次使用aws-go-jdk 操作bucket 失败， 之前没接触过s3 api,所以安装官方demo 写了一个 ，追后发现死活不成功;不成功的原因在于， 创建bucket 的时候一定要加&rdquo;/&rdquo; 作为前缀，不然bucket name 回拼接到host，上导致dns无法解析， 具体原因就自己看源码吧， 个人觉得源码写的太绕了，花式太多，不简洁所以没耐力看完，仅此记录一下避免以后再出现;
+ input := &amp;s3.CreateBucketInput{Bucket: aws.String(&quot;/bucketName&rdquo;)}  官方demo 如下:
+ input := &amp;s3.CreateBucketInput{ Bucket: aws.String(&quot;bucketName&quot;), CreateBucketConfiguration: &amp;s3.CreateBucketConfiguration{LocationConstraint: aws.String(&quot;&quot;)}, } // Create the S3 service client with the shared session. This will // automatically use the S3 custom endpoint configured in the custom // endpoint resolver wrapping the default endpoint resolver. svc := s3.New(sess) result2, err := svc.CreateBucket(input2) if err !">
+<meta itemprop="datePublished" content="2020-04-04T19:57:29&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-04T19:57:29&#43;08:00" />
+<meta itemprop="wordCount" content="118">
+<meta itemprop="image" content="/"/>
+
+
+
+<meta itemprop="keywords" content="golang,aws-go-jdk,s3," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="aws-go-jdk 创建bucket失败"/>
+<meta name="twitter:description" content="初次使用aws-go-jdk 操作bucket 失败， 之前没接触过s3 api,所以安装官方demo 写了一个 ，追后发现死活不成功;不成功的原因在于， 创建bucket 的时候一定要加&rdquo;/&rdquo; 作为前缀，不然bucket name 回拼接到host，上导致dns无法解析， 具体原因就自己看源码吧， 个人觉得源码写的太绕了，花式太多，不简洁所以没耐力看完，仅此记录一下避免以后再出现;
+ input := &amp;s3.CreateBucketInput{Bucket: aws.String(&quot;/bucketName&rdquo;)}  官方demo 如下:
+ input := &amp;s3.CreateBucketInput{ Bucket: aws.String(&quot;bucketName&quot;), CreateBucketConfiguration: &amp;s3.CreateBucketConfiguration{LocationConstraint: aws.String(&quot;&quot;)}, } // Create the S3 service client with the shared session. This will // automatically use the S3 custom endpoint configured in the custom // endpoint resolver wrapping the default endpoint resolver. svc := s3.New(sess) result2, err := svc.CreateBucket(input2) if err !"/>
+
+
+
+
+
+    <meta property="article:published_time" content="2020-04-04 19:57:29 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">cd /home</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">关于</a></li><li><a href="/posts/">技术</a></li><li><a href="/lives/">感悟</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="/posts/2020/04/aws-go-jdk-%E5%88%9B%E5%BB%BAbucket%E5%A4%B1%E8%B4%A5/">aws-go-jdk 创建bucket失败</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <p>初次使用aws-go-jdk 操作bucket 失败， 之前没接触过s3 api,所以安装官方demo 写了一个 ，追后发现死活不成功;不成功的原因在于， 创建bucket 的时候一定要加&rdquo;/&rdquo; 作为前缀，不然bucket  name 回拼接到host，上导致dns无法解析， 具体原因就自己看源码吧， 个人觉得源码写的太绕了，花式太多，不简洁所以没耐力看完，仅此记录一下避免以后再出现;</p>
+<ul>
+<li>input := &amp;s3.CreateBucketInput{Bucket: aws.String(&quot;/bucketName&rdquo;)}</li>
+</ul>
+<p>官方demo 如下:</p>
+<pre><code>        input := &amp;s3.CreateBucketInput{
+                Bucket: aws.String(&quot;bucketName&quot;),
+                CreateBucketConfiguration: &amp;s3.CreateBucketConfiguration{LocationConstraint: aws.String(&quot;&quot;)},
+        }
+
+        // Create the S3 service client with the shared session. This will
+        // automatically use the S3 custom endpoint configured in the custom
+        // endpoint resolver wrapping the default endpoint resolver.
+        svc := s3.New(sess)
+        result2, err := svc.CreateBucket(input2)
+        if err != nil {
+                if aerr, ok := err.(awserr.Error); ok {
+                        switch aerr.Code() {
+                        case s3.ErrCodeBucketAlreadyExists:
+                                fmt.Println(s3.ErrCodeBucketAlreadyExists, aerr.Error())
+                        case s3.ErrCodeBucketAlreadyOwnedByYou:
+                                fmt.Println(s3.ErrCodeBucketAlreadyOwnedByYou, aerr.Error())
+                        default:
+                                fmt.Println(aerr.Error())
+                        }
+                } else {
+                        // Print the error, cast err to awserr.Error to get the Code and
+                        // Message from an error.
+                        fmt.Println(err.Error())
+                }
+                return
+        }
+</code></pre>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="/tags/golang">golang</a></span><span class="tag"><a href="/tags/aws-go-jdk">aws-go-jdk</a></span><span class="tag"><a href="/tags/s3">s3</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-04-04 19:57 &#43;0800</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h">true</span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+
+                    
+                        <span class="button next">
+                            <a href="/posts/2020/04/curl-ftp-%E6%93%8D%E4%BD%9C/">
+                                <span class="button__text">CURL FTP 操作</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+            <span><a href="/">xsean2020</a></span>
+            
+            <span></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss">
+                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                        <circle cx="5" cy="19" r="1"></circle>
+                    </svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.2d5469329143160ae2456a69c3c76dc2d0a3b212b46afe291a51bd68650ed6f8697e001dab54f1c272c77ce08092a8c55e5bb4314e0ee334aab4b927ec896638.js" integrity="sha512-LVRpMpFDFgriRWppw8dtwtCjshK0av4pGlG9aGUO1vhpfgAdq1TxwnLHfOCAkqjFXlu0MU4O4zSqtLkn7IlmOA=="></script>
+
+
+
+    </body>
+</html>

@@ -6,10 +6,37 @@
     <description>Recent content in Tags on 老码识图</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 03 Apr 2020 23:30:19 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2020 19:57:29 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>aws-sdk-go</title>
+      <link>/tags/aws-sdk-go/</link>
+      <pubDate>Sat, 04 Apr 2020 19:57:29 +0800</pubDate>
+      
+      <guid>/tags/aws-sdk-go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>/tags/golang/</link>
+      <pubDate>Sat, 04 Apr 2020 19:57:29 +0800</pubDate>
+      
+      <guid>/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>S3</title>
+      <link>/tags/s3/</link>
+      <pubDate>Sat, 04 Apr 2020 19:57:29 +0800</pubDate>
+      
+      <guid>/tags/s3/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>curl</title>
@@ -62,15 +89,6 @@
       <pubDate>Fri, 03 Apr 2020 21:14:01 +0800</pubDate>
       
       <guid>/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>/tags/golang/</link>
-      <pubDate>Thu, 02 Apr 2020 11:36:23 +0800</pubDate>
-      
-      <guid>/tags/golang/</guid>
       <description></description>
     </item>
     
