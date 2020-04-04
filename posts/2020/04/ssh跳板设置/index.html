@@ -5,7 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="map[name:xsean]">
-<meta name="description" content="ssh 跳板机设置 ssh -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -p 22 root@target.machine 远程拷贝 # 重远程机拷贝到本地 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r lmx@target.machine:~/targetFile . # 本地拷贝目标机器 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r targetFile lmx@target.machine:~ " />
+<meta name="description" content="ssh通过代理服务器登陆远程主机
+SSH跳板 在远程主机不可以直接访问的时候，可以通过可以访问的一个中间服务器作为跳板直接访问后端服务器;
+ssh -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -p 22 root@target.machine SCP远程拷贝 在远程主机无法直接访问的时候，可以通过代理服务器来达到重远程服务器下载文件;
+* 重远程机拷贝到本地 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r lmx@target.machine:~/targetFile . * 本地拷贝目标机器 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r targetFile lmx@target.machine:~ " />
 <meta name="keywords" content="blog, linux, shell, ssh, scp" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -34,7 +37,7 @@
 <meta itemprop="description" content="ssh跳板机，及通过跳板机远程拷贝">
 <meta itemprop="datePublished" content="2020-04-03T21:14:01&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-03T21:14:01&#43;08:00" />
-<meta itemprop="wordCount" content="56">
+<meta itemprop="wordCount" content="58">
 <meta itemprop="image" content="/"/>
 
 
@@ -129,12 +132,15 @@
             
 
             <div class="post-content">
-                <h2 id="ssh-跳板机设置">ssh 跳板机设置</h2>
+                <p>ssh通过代理服务器登陆远程主机</p>
+<h3 id="ssh跳板">SSH跳板</h3>
+<p>在远程主机不可以直接访问的时候，可以通过可以访问的一个中间服务器作为跳板直接访问后端服务器;</p>
 <pre><code>ssh -o &quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&quot; -p 22 root@target.machine
-</code></pre><h2 id="远程拷贝">远程拷贝</h2>
-<pre><code># 重远程机拷贝到本地
+</code></pre><h3 id="scp远程拷贝">SCP远程拷贝</h3>
+<p>在远程主机无法直接访问的时候，可以通过代理服务器来达到重远程服务器下载文件;</p>
+<pre><code>* 重远程机拷贝到本地  
 scp -o &quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&quot; -P 22 -r lmx@target.machine:~/targetFile .
-# 本地拷贝目标机器
+* 本地拷贝目标机器  
 scp -o &quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&quot; -P 22 -r targetFile lmx@target.machine:~
 </code></pre>
             </div>

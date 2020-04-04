@@ -17,7 +17,10 @@
       <pubDate>Fri, 03 Apr 2020 21:14:01 +0800</pubDate>
       
       <guid>/posts/2020/04/ssh%E8%B7%B3%E6%9D%BF%E8%AE%BE%E7%BD%AE/</guid>
-      <description>ssh 跳板机设置 ssh -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -p 22 root@target.machine 远程拷贝 # 重远程机拷贝到本地 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r lmx@target.machine:~/targetFile . # 本地拷贝目标机器 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r targetFile lmx@target.machine:~ </description>
+      <description>ssh通过代理服务器登陆远程主机
+SSH跳板 在远程主机不可以直接访问的时候，可以通过可以访问的一个中间服务器作为跳板直接访问后端服务器;
+ssh -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -p 22 root@target.machine SCP远程拷贝 在远程主机无法直接访问的时候，可以通过代理服务器来达到重远程服务器下载文件;
+* 重远程机拷贝到本地 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r lmx@target.machine:~/targetFile . * 本地拷贝目标机器 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r targetFile lmx@target.machine:~ </description>
     </item>
     
   </channel>

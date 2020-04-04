@@ -17,7 +17,8 @@
       <pubDate>Fri, 03 Apr 2020 23:30:19 +0800</pubDate>
       
       <guid>/posts/2020/04/curl-ftp-%E6%93%8D%E4%BD%9C/</guid>
-      <description>文件上传 curl –u username:password -T target.zip ftp://ip:port/target.zip 文件下载 curl –u username:password ftp://ip:port/target.zip -o target.zip 文件删除 curl –u username:password ftp://ip:port/target.zip -Q &#39;DELE target.zip&#39; </description>
+      <description> 使用ftp 服务时不想下载ftp客户端操作的时候，可以利用curl达到相同的目的；
+文件上传 curl –u username:password -T target.zip ftp://ip:port/target.zip 文件下载 curl –u username:password ftp://ip:port/target.zip -o target.zip 文件删除 curl –u username:password ftp://ip:port/target.zip -Q &#39;DELE target.zip&#39; </description>
     </item>
     
     <item>
@@ -35,7 +36,10 @@
       <pubDate>Fri, 03 Apr 2020 21:14:01 +0800</pubDate>
       
       <guid>/posts/2020/04/ssh%E8%B7%B3%E6%9D%BF%E8%AE%BE%E7%BD%AE/</guid>
-      <description>ssh 跳板机设置 ssh -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -p 22 root@target.machine 远程拷贝 # 重远程机拷贝到本地 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r lmx@target.machine:~/targetFile . # 本地拷贝目标机器 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r targetFile lmx@target.machine:~ </description>
+      <description>ssh通过代理服务器登陆远程主机
+SSH跳板 在远程主机不可以直接访问的时候，可以通过可以访问的一个中间服务器作为跳板直接访问后端服务器;
+ssh -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -p 22 root@target.machine SCP远程拷贝 在远程主机无法直接访问的时候，可以通过代理服务器来达到重远程服务器下载文件;
+* 重远程机拷贝到本地 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r lmx@target.machine:~/targetFile . * 本地拷贝目标机器 scp -o &amp;quot;ProxyCommand ssh -p 22 root@proxy.machine nc -w 1 %h %p&amp;quot; -P 22 -r targetFile lmx@target.machine:~ </description>
     </item>
     
     <item>
@@ -44,7 +48,7 @@
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>程序猿 </description>
+      <description>程序猿  此博客仅记录今后工作中遇到的一些问题， 一切归零重头再续。。。</description>
     </item>
     
   </channel>

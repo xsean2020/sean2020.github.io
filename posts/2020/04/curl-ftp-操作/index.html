@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="archetypes true true true true content This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. data false false false false true false false true layouts xsean public true monokai 10 ">
-<meta name="description" content="文件上传 curl –u username:password -T target.zip ftp://ip:port/target.zip 文件下载 curl –u username:password ftp://ip:port/target.zip -o target.zip 文件删除 curl –u username:password ftp://ip:port/target.zip -Q &#39;DELE target.zip&#39; " />
+<meta name="description" content=" 使用ftp 服务时不想下载ftp客户端操作的时候，可以利用curl达到相同的目的；
+文件上传 curl –u username:password -T target.zip ftp://ip:port/target.zip 文件下载 curl –u username:password ftp://ip:port/target.zip -o target.zip 文件删除 curl –u username:password ftp://ip:port/target.zip -Q &#39;DELE target.zip&#39; " />
 <meta name="keywords" content="blog, linux, shell, curl, ftp" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -31,10 +32,11 @@
 
 
 <meta itemprop="name" content="CURL FTP 操作">
-<meta itemprop="description" content="文件上传 curl –u username:password -T target.zip ftp://ip:port/target.zip 文件下载 curl –u username:password ftp://ip:port/target.zip -o target.zip 文件删除 curl –u username:password ftp://ip:port/target.zip -Q &#39;DELE target.zip&#39; ">
+<meta itemprop="description" content=" 使用ftp 服务时不想下载ftp客户端操作的时候，可以利用curl达到相同的目的；
+文件上传 curl –u username:password -T target.zip ftp://ip:port/target.zip 文件下载 curl –u username:password ftp://ip:port/target.zip -o target.zip 文件删除 curl –u username:password ftp://ip:port/target.zip -Q &#39;DELE target.zip&#39; ">
 <meta itemprop="datePublished" content="2020-04-03T23:30:19&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-03T23:30:19&#43;08:00" />
-<meta itemprop="wordCount" content="22">
+<meta itemprop="wordCount" content="24">
 <meta itemprop="image" content="/"/>
 
 
@@ -43,7 +45,8 @@
 <meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="CURL FTP 操作"/>
-<meta name="twitter:description" content="文件上传 curl –u username:password -T target.zip ftp://ip:port/target.zip 文件下载 curl –u username:password ftp://ip:port/target.zip -o target.zip 文件删除 curl –u username:password ftp://ip:port/target.zip -Q &#39;DELE target.zip&#39; "/>
+<meta name="twitter:description" content=" 使用ftp 服务时不想下载ftp客户端操作的时候，可以利用curl达到相同的目的；
+文件上传 curl –u username:password -T target.zip ftp://ip:port/target.zip 文件下载 curl –u username:password ftp://ip:port/target.zip -o target.zip 文件删除 curl –u username:password ftp://ip:port/target.zip -Q &#39;DELE target.zip&#39; "/>
 
 
 
@@ -125,7 +128,8 @@
             
 
             <div class="post-content">
-                <h3 id="文件上传">文件上传</h3>
+                <p>    使用ftp 服务时不想下载ftp客户端操作的时候，可以利用curl达到相同的目的；</p>
+<h3 id="文件上传">文件上传</h3>
 <pre><code>curl –u username:password -T target.zip ftp://ip:port/target.zip
 </code></pre><h3 id="文件下载">文件下载</h3>
 <pre><code>curl –u username:password ftp://ip:port/target.zip  -o target.zip
