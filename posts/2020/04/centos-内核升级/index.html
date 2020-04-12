@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="archetypes true true true true content This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. data false false false false true false false true layouts xsean2020 public true monokai 10 ">
+<meta name="description" content="启用 ELRepo 仓库 ELRepo 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。 ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡驱动、网络驱动、声卡驱动和摄像头驱动等
+导入ELRepo仓库的公共密钥 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org 安装ELRepo仓库的yum源 rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm 查看可用的系统内核包 yum --disablerepo=&amp;quot;*&amp;quot; --enablerepo=&amp;quot;elrepo-kernel&amp;quot; list available  Loaded plugins: fastestmirror Loading mirror speeds from cached hostfile * elrepo-kernel: mirrors.tuna.tsinghua.edu.cn elrepo-kernel | 2.9 kB 00:00:00 elrepo-kernel/primary_db | 1.9 MB 00:00:01 Available Packages elrepo-release.noarch 7.0-4.el7.elrepo elrepo-kernel kernel-lt.x86_64 4.4.218-1.el7.elrepo elrepo-kernel kernel-lt-devel.x86_64 4.4.218-1.el7.elrepo elrepo-kernel kernel-lt-doc.noarch 4.4.218-1.el7.elrepo elrepo-kernel kernel-lt-headers.x86_64 4." />
+<meta name="keywords" content="blog, linux, centos, yum" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="/posts/2020/04/centos-%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/" />
+
+
+    <title>
+        
+            Centos 内核升级 :: 老码识图  — xsean2020&#39;s blog
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.7bfbbe12786fa0ded4b4c0d792cbb36a5bd0bdb0b856dde57aa7b1f6fe0f2b87.css">
+
+
+
+
+<meta itemprop="name" content="Centos 内核升级">
+<meta itemprop="description" content="启用 ELRepo 仓库 ELRepo 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。 ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡驱动、网络驱动、声卡驱动和摄像头驱动等
+导入ELRepo仓库的公共密钥 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org 安装ELRepo仓库的yum源 rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm 查看可用的系统内核包 yum --disablerepo=&quot;*&quot; --enablerepo=&quot;elrepo-kernel&quot; list available  Loaded plugins: fastestmirror Loading mirror speeds from cached hostfile * elrepo-kernel: mirrors.tuna.tsinghua.edu.cn elrepo-kernel | 2.9 kB 00:00:00 elrepo-kernel/primary_db | 1.9 MB 00:00:01 Available Packages elrepo-release.noarch 7.0-4.el7.elrepo elrepo-kernel kernel-lt.x86_64 4.4.218-1.el7.elrepo elrepo-kernel kernel-lt-devel.x86_64 4.4.218-1.el7.elrepo elrepo-kernel kernel-lt-doc.noarch 4.4.218-1.el7.elrepo elrepo-kernel kernel-lt-headers.x86_64 4.">
+<meta itemprop="datePublished" content="2020-04-08T10:00:14&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-08T10:00:14&#43;08:00" />
+<meta itemprop="wordCount" content="216">
+<meta itemprop="image" content="/"/>
+
+
+
+<meta itemprop="keywords" content="linux,centos,yum," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Centos 内核升级"/>
+<meta name="twitter:description" content="启用 ELRepo 仓库 ELRepo 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。 ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡驱动、网络驱动、声卡驱动和摄像头驱动等
+导入ELRepo仓库的公共密钥 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org 安装ELRepo仓库的yum源 rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm 查看可用的系统内核包 yum --disablerepo=&quot;*&quot; --enablerepo=&quot;elrepo-kernel&quot; list available  Loaded plugins: fastestmirror Loading mirror speeds from cached hostfile * elrepo-kernel: mirrors.tuna.tsinghua.edu.cn elrepo-kernel | 2.9 kB 00:00:00 elrepo-kernel/primary_db | 1.9 MB 00:00:01 Available Packages elrepo-release.noarch 7.0-4.el7.elrepo elrepo-kernel kernel-lt.x86_64 4.4.218-1.el7.elrepo elrepo-kernel kernel-lt-devel.x86_64 4.4.218-1.el7.elrepo elrepo-kernel kernel-lt-doc.noarch 4.4.218-1.el7.elrepo elrepo-kernel kernel-lt-headers.x86_64 4."/>
+
+
+
+
+
+    <meta property="article:published_time" content="2020-04-08 10:00:14 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">cd /home</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">关于</a></li><li><a href="/posts/">技术</a></li><li><a href="/lives/">感悟</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="/posts/2020/04/centos-%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/">Centos 内核升级</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <h1 id="启用-elrepo-仓库">启用 ELRepo 仓库</h1>
+<p>ELRepo 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。
+ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡驱动、网络驱动、声卡驱动和摄像头驱动等</p>
+<h3 id="导入elrepo仓库的公共密钥">导入ELRepo仓库的公共密钥</h3>
+<pre><code>rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+</code></pre><h3 id="安装elrepo仓库的yum源">安装ELRepo仓库的yum源</h3>
+<pre><code>rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
+</code></pre><h1 id="查看可用的系统内核包">查看可用的系统内核包</h1>
+<pre><code>yum --disablerepo=&quot;*&quot; --enablerepo=&quot;elrepo-kernel&quot; list available
+</code></pre>
+<pre><code>Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * elrepo-kernel: mirrors.tuna.tsinghua.edu.cn
+elrepo-kernel                                                                                                                   | 2.9 kB  00:00:00
+elrepo-kernel/primary_db                                                                                                        | 1.9 MB  00:00:01
+Available Packages
+elrepo-release.noarch                                                      7.0-4.el7.elrepo                                               elrepo-kernel
+kernel-lt.x86_64                                                           4.4.218-1.el7.elrepo                                           elrepo-kernel
+kernel-lt-devel.x86_64                                                     4.4.218-1.el7.elrepo                                           elrepo-kernel
+kernel-lt-doc.noarch                                                       4.4.218-1.el7.elrepo                                           elrepo-kernel
+kernel-lt-headers.x86_64                                                   4.4.218-1.el7.elrepo                                           elrepo-kernel
+kernel-lt-tools.x86_64                                                     4.4.218-1.el7.elrepo                                           elrepo-kernel
+kernel-lt-tools-libs.x86_64                                                4.4.218-1.el7.elrepo                                           elrepo-kernel
+kernel-lt-tools-libs-devel.x86_64                                          4.4.218-1.el7.elrepo                                           elrepo-kernel
+kernel-ml.x86_64                                                           5.6.2-1.el7.elrepo                                             elrepo-kernel
+kernel-ml-devel.x86_64                                                     5.6.2-1.el7.elrepo                                             elrepo-kernel
+kernel-ml-doc.noarch                                                       5.6.2-1.el7.elrepo                                             elrepo-kernel
+kernel-ml-headers.x86_64                                                   5.6.2-1.el7.elrepo                                             elrepo-kernel
+kernel-ml-tools.x86_64                                                     5.6.2-1.el7.elrepo                                             elrepo-kernel
+kernel-ml-tools-libs.x86_64                                                5.6.2-1.el7.elrepo                                             elrepo-kernel
+kernel-ml-tools-libs-devel.x86_64                                          5.6.2-1.el7.elrepo                                             elrepo-kernel
+perf.x86_64                                                                5.6.2-1.el7.elrepo                                             elrepo-kernel
+python-perf.x86_64                                                         5.6.2-1.el7.elrepo                                             elrepo-kernel
+</code></pre><h1 id="安装需要的内核我用的4稳定版所有选择lt">安装需要的内核，我用的4.+稳定版所有选择lt</h1>
+<pre><code>yum --enablerepo=elrepo-kernel install kernel-lt -y
+</code></pre>
+<h3 id="查看系统可用内核">查看系统可用内核</h3>
+<pre><code>cat /boot/grub2/grub.cfg |grep menuentry
+</code></pre>
+<pre><code>if [ x&quot;${feature_menuentry_id}&quot; = xy ]; then
+  menuentry_id_option=&quot;--id&quot;
+  menuentry_id_option=&quot;&quot;
+export menuentry_id_option
+menuentry 'CentOS Linux (4.4.218-1.el7.elrepo.x86_64) 7 (Core)' --class centos --class gnu-linux --class gnu --class os --unrestricted $menuentry_id_option 'gnulinux-3.10.0-957.el7.x86_64-advanced-dad2f04d-8eea-416e-baec-21178a40cec9' {
+menuentry 'CentOS Linux (3.10.0-1062.18.1.el7.x86_64) 7 (Core)' --class centos --class gnu-linux --class gnu --class os --unrestricted $menuentry_id_option 'gnulinux-3.10.0-957.el7.x86_64-advanced-dad2f04d-8eea-416e-baec-21178a40cec9' {
+menuentry 'CentOS Linux (3.10.0-957.el7.x86_64) 7 (Core)' --class centos --class gnu-linux --class gnu --class os --unrestricted $menuentry_id_option 'gnulinux-3.10.0-957.el7.x86_64-advanced-dad2f04d-8eea-416e-baec-21178a40cec9' {
+menuentry 'CentOS Linux (0-rescue-eb97bfa540dd4d02929fe57109e01dd4) 7 (Core)' --class centos --class gnu-linux --class gnu --class os --unrestricted $menuentry_id_option 'gnulinux-0-rescue-eb97bfa540dd4d02929fe57109e01dd4-advanced-dad2f04d-8eea-416e-baec-21178a40cec9' {
+
+</code></pre><h3 id="设置启动时默认内核版本">设置启动时默认内核版本</h3>
+<pre><code> grub2-set-default 'CentOS Linux (4.4.218-1.el7.elrepo.x86_64) 7 (Core)'  &amp;&amp; reboot
+</code></pre>
+<h3 id="验证是否生效">验证是否生效</h3>
+<pre><code> uname -rs 
+</code></pre>
+<p>输出如下：</p>
+<pre><code>Linux 4.4.218-1.el7.elrepo.x86_64
+</code></pre>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="/tags/linux">linux</a></span><span class="tag"><a href="/tags/centos">centos</a></span><span class="tag"><a href="/tags/yum">yum</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-04-08 10:00 &#43;0800</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h">true</span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+
+                    
+                        <span class="button next">
+                            <a href="/posts/2020/04/aws-sdk-go-s3%E5%88%9B%E5%BB%BAbucket%E5%A4%B1%E8%B4%A5/">
+                                <span class="button__text">aws-sdk-go s3创建bucket失败</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+            <span><a href="/">xsean2020</a></span>
+            
+            <span></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss">
+                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                        <circle cx="5" cy="19" r="1"></circle>
+                    </svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.2d5469329143160ae2456a69c3c76dc2d0a3b212b46afe291a51bd68650ed6f8697e001dab54f1c272c77ce08092a8c55e5bb4314e0ee334aab4b927ec896638.js" integrity="sha512-LVRpMpFDFgriRWppw8dtwtCjshK0av4pGlG9aGUO1vhpfgAdq1TxwnLHfOCAkqjFXlu0MU4O4zSqtLkn7IlmOA=="></script>
+
+
+
+    </body>
+</html>
