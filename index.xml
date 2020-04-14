@@ -12,11 +12,25 @@
     
     
     <item>
-      <title>Centos 内核升级</title>
-      <link>/posts/2020/04/centos-%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/</link>
+      <title>欧几里得算法</title>
+      <link>/posts/2020/04/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 14 Apr 2020 11:42:44 +0800</pubDate>
+      
+      <guid>/posts/2020/04/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</guid>
+      <description>定理：两个整数的最大公约数等于其中较小的那个数和两数相除余数的最大公约数。最大公约数（Greatest Common Divisor）缩写为GCD。  假设 c = gcd(a,b),则存在m,n 使a = mc,b = nc;
+令r = a mod b,即存在k,使r = a-kb = mc - knc = (m-kn)c;
+故gcd(b,a mod b) = gcd(b,r) = gcd(nc,(m-kn)c) = gcd(n,m-kn)*c;
+假设d = gcd(n,m-kn), 则存在x,y,x 使n = xd, m-kn = yd; 故m = yd+kn = yd+kxd = (y+kx)d;
+故有a = mc = (y+kx)dc, b = nc = xdc; 可得 gcd(a,b) = gcd((y+kx)dc,xdc) = dc;
+由于gcd(a,b) = c, 故d = 1;</description>
+    </item>
+    
+    <item>
+      <title>Centos7 内核升级</title>
+      <link>/posts/2020/04/centos7-%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/</link>
       <pubDate>Wed, 08 Apr 2020 10:00:14 +0800</pubDate>
       
-      <guid>/posts/2020/04/centos-%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/</guid>
+      <guid>/posts/2020/04/centos7-%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/</guid>
       <description>启用 ELRepo 仓库 ELRepo 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。 ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡驱动、网络驱动、声卡驱动和摄像头驱动等
 导入ELRepo仓库的公共密钥 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org 安装ELRepo仓库的yum源 rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm 查看可用的系统内核包 yum --disablerepo=&amp;quot;*&amp;quot; --enablerepo=&amp;quot;elrepo-kernel&amp;quot; list available  Loaded plugins: fastestmirror Loading mirror speeds from cached hostfile * elrepo-kernel: mirrors.tuna.tsinghua.edu.cn elrepo-kernel | 2.9 kB 00:00:00 elrepo-kernel/primary_db | 1.9 MB 00:00:01 Available Packages elrepo-release.noarch 7.0-4.el7.elrepo elrepo-kernel kernel-lt.x86_64 4.4.218-1.el7.elrepo elrepo-kernel kernel-lt-devel.x86_64 4.4.218-1.el7.elrepo elrepo-kernel kernel-lt-doc.noarch 4.4.218-1.el7.elrepo elrepo-kernel kernel-lt-headers.x86_64 4.</description>
     </item>

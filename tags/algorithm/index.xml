@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>algorithm on 老码识图</title>
+    <link>/tags/algorithm/</link>
+    <description>Recent content in algorithm on 老码识图</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 14 Apr 2020 11:42:44 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>欧几里得算法</title>
+      <link>/posts/2020/04/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 14 Apr 2020 11:42:44 +0800</pubDate>
+      
+      <guid>/posts/2020/04/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</guid>
+      <description>定理：两个整数的最大公约数等于其中较小的那个数和两数相除余数的最大公约数。最大公约数（Greatest Common Divisor）缩写为GCD。  假设 c = gcd(a,b),则存在m,n 使a = mc,b = nc;
+令r = a mod b,即存在k,使r = a-kb = mc - knc = (m-kn)c;
+故gcd(b,a mod b) = gcd(b,r) = gcd(nc,(m-kn)c) = gcd(n,m-kn)*c;
+假设d = gcd(n,m-kn), 则存在x,y,x 使n = xd, m-kn = yd; 故m = yd+kn = yd+kxd = (y+kx)d;
+故有a = mc = (y+kx)dc, b = nc = xdc; 可得 gcd(a,b) = gcd((y+kx)dc,xdc) = dc;
+由于gcd(a,b) = c, 故d = 1;</description>
+    </item>
+    
+  </channel>
+</rss>
