@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/</loc>
+    <lastmod>2020-04-16T12:56:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/rancher_offile/</loc>
+    <lastmod>2020-04-16T12:56:13+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/algorithm/</loc>
     <lastmod>2020-04-14T11:42:44+08:00</lastmod>
   </url>
