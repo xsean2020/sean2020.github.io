@@ -9,6 +9,22 @@
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Rancher离线安装问题</title>
+            <link>/posts/2020/04/rancher%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/</link>
+            <pubDate>Thu, 16 Apr 2020 12:56:13 +0800</pubDate>
+            
+            <guid>/posts/2020/04/rancher%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/</guid>
+            <description>rancher server 默认启动会重外网拉取相关数据  CATTLE_UI_INDEX = local 使用本地的ui CATTLE_SYSTEM_CATALOG = bundled 应用商店使用内置的不用去网上同步  docker run --rm -p 8080:80 -p 8443:443 -e CATTLE_SYSTEM_CATALOG=bundled -e CATTLE_UI_INDEX=local dr.kunlun:5000/rancher/rancher:v2.3.5 </description>
+            <content type="html"><![CDATA[<h4 id="rancher-server--默认启动会重外网拉取相关数据">rancher server  默认启动会重外网拉取相关数据</h4>
+<ul>
+<li>CATTLE_UI_INDEX = local     使用本地的ui</li>
+<li>CATTLE_SYSTEM_CATALOG = bundled   应用商店使用内置的不用去网上同步</li>
+</ul>
+<pre><code>docker run  --rm -p 8080:80 -p 8443:443    -e CATTLE_SYSTEM_CATALOG=bundled -e CATTLE_UI_INDEX=local  dr.kunlun:5000/rancher/rancher:v2.3.5
+</code></pre>]]></content>
+        </item>
+        
+        <item>
             <title>欧几里得算法</title>
             <link>/posts/2020/04/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</link>
             <pubDate>Tue, 14 Apr 2020 11:42:44 +0800</pubDate>

@@ -3,12 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/</loc>
+    <loc>/tags/k8s/</loc>
     <lastmod>2020-04-16T12:56:13+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/rancher_offile/</loc>
+    <loc>/tags/rancher/</loc>
+    <lastmod>2020-04-16T12:56:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2020/04/rancher%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2020-04-16T12:56:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
     <lastmod>2020-04-16T12:56:13+08:00</lastmod>
   </url>
   
@@ -19,11 +29,6 @@
   
   <url>
     <loc>/tags/golang/</loc>
-    <lastmod>2020-04-14T11:42:44+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-04-14T11:42:44+08:00</lastmod>
   </url>
   
@@ -154,11 +159,6 @@
   
   <url>
     <loc>/tags/java/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/k8s/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
   </url>
   

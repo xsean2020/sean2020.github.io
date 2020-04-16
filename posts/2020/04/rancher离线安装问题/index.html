@@ -5,21 +5,16 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="archetypes true true true true content This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. data false false false false true false false true layouts xsean2020 public true monokai 10 ">
-<meta name="description" content="定理：两个整数的最大公约数等于其中较小的那个数和两数相除余数的最大公约数。最大公约数（Greatest Common Divisor）缩写为GCD。  假设 c = gcd(a,b),则存在m,n 使a = mc,b = nc;
-令r = a mod b,即存在k,使r = a-kb = mc - knc = (m-kn)c;
-故gcd(b,a mod b) = gcd(b,r) = gcd(nc,(m-kn)c) = gcd(n,m-kn)*c;
-假设d = gcd(n,m-kn), 则存在x,y,x 使n = xd, m-kn = yd; 故m = yd&#43;kn = yd&#43;kxd = (y&#43;kx)d;
-故有a = mc = (y&#43;kx)dc, b = nc = xdc; 可得 gcd(a,b) = gcd((y&#43;kx)dc,xdc) = dc;
-由于gcd(a,b) = c, 故d = 1;" />
-<meta name="keywords" content="blog, algorithm, golang" />
+<meta name="description" content="rancher server 默认启动会重外网拉取相关数据  CATTLE_UI_INDEX = local 使用本地的ui CATTLE_SYSTEM_CATALOG = bundled 应用商店使用内置的不用去网上同步  docker run --rm -p 8080:80 -p 8443:443 -e CATTLE_SYSTEM_CATALOG=bundled -e CATTLE_UI_INDEX=local dr.kunlun:5000/rancher/rancher:v2.3.5 " />
+<meta name="keywords" content="blog, k8s, rancher" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="/posts/2020/04/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/" />
+<link rel="canonical" href="/posts/2020/04/rancher%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/" />
 
 
     <title>
         
-            欧几里得算法 :: 老码识图  — xsean2020&#39;s blog
+            Rancher离线安装问题 :: 老码识图  — xsean2020&#39;s blog
         
     </title>
 
@@ -35,36 +30,26 @@
 
 
 
-<meta itemprop="name" content="欧几里得算法">
-<meta itemprop="description" content="定理：两个整数的最大公约数等于其中较小的那个数和两数相除余数的最大公约数。最大公约数（Greatest Common Divisor）缩写为GCD。  假设 c = gcd(a,b),则存在m,n 使a = mc,b = nc;
-令r = a mod b,即存在k,使r = a-kb = mc - knc = (m-kn)c;
-故gcd(b,a mod b) = gcd(b,r) = gcd(nc,(m-kn)c) = gcd(n,m-kn)*c;
-假设d = gcd(n,m-kn), 则存在x,y,x 使n = xd, m-kn = yd; 故m = yd&#43;kn = yd&#43;kxd = (y&#43;kx)d;
-故有a = mc = (y&#43;kx)dc, b = nc = xdc; 可得 gcd(a,b) = gcd((y&#43;kx)dc,xdc) = dc;
-由于gcd(a,b) = c, 故d = 1;">
-<meta itemprop="datePublished" content="2020-04-14T11:42:44&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-14T11:42:44&#43;08:00" />
-<meta itemprop="wordCount" content="128">
+<meta itemprop="name" content="Rancher离线安装问题">
+<meta itemprop="description" content="rancher server 默认启动会重外网拉取相关数据  CATTLE_UI_INDEX = local 使用本地的ui CATTLE_SYSTEM_CATALOG = bundled 应用商店使用内置的不用去网上同步  docker run --rm -p 8080:80 -p 8443:443 -e CATTLE_SYSTEM_CATALOG=bundled -e CATTLE_UI_INDEX=local dr.kunlun:5000/rancher/rancher:v2.3.5 ">
+<meta itemprop="datePublished" content="2020-04-16T12:56:13&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-16T12:56:13&#43;08:00" />
+<meta itemprop="wordCount" content="23">
 <meta itemprop="image" content="/"/>
 
 
 
-<meta itemprop="keywords" content="algorithm,golang," /><meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="k8s,rancher," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
-<meta name="twitter:title" content="欧几里得算法"/>
-<meta name="twitter:description" content="定理：两个整数的最大公约数等于其中较小的那个数和两数相除余数的最大公约数。最大公约数（Greatest Common Divisor）缩写为GCD。  假设 c = gcd(a,b),则存在m,n 使a = mc,b = nc;
-令r = a mod b,即存在k,使r = a-kb = mc - knc = (m-kn)c;
-故gcd(b,a mod b) = gcd(b,r) = gcd(nc,(m-kn)c) = gcd(n,m-kn)*c;
-假设d = gcd(n,m-kn), 则存在x,y,x 使n = xd, m-kn = yd; 故m = yd&#43;kn = yd&#43;kxd = (y&#43;kx)d;
-故有a = mc = (y&#43;kx)dc, b = nc = xdc; 可得 gcd(a,b) = gcd((y&#43;kx)dc,xdc) = dc;
-由于gcd(a,b) = c, 故d = 1;"/>
+<meta name="twitter:title" content="Rancher离线安装问题"/>
+<meta name="twitter:description" content="rancher server 默认启动会重外网拉取相关数据  CATTLE_UI_INDEX = local 使用本地的ui CATTLE_SYSTEM_CATALOG = bundled 应用商店使用内置的不用去网上同步  docker run --rm -p 8080:80 -p 8443:443 -e CATTLE_SYSTEM_CATALOG=bundled -e CATTLE_UI_INDEX=local dr.kunlun:5000/rancher/rancher:v2.3.5 "/>
 
 
 
 
 
-    <meta property="article:published_time" content="2020-04-14 11:42:44 &#43;0800 CST" />
+    <meta property="article:published_time" content="2020-04-16 12:56:13 &#43;0800 CST" />
 
 
 
@@ -134,33 +119,18 @@
 
         <article>
             <h1 class="post-title">
-                <a href="/posts/2020/04/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/">欧几里得算法</a>
+                <a href="/posts/2020/04/rancher%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/">Rancher离线安装问题</a>
             </h1>
 
             
 
             <div class="post-content">
-                <h4 id="定理两个整数的最大公约数等于其中较小的那个数和两数相除余数的最大公约数最大公约数greatest-common-divisor缩写为gcd">定理：两个整数的最大公约数等于其中较小的那个数和两数相除余数的最大公约数。最大公约数（Greatest Common Divisor）缩写为GCD。</h4>
-<blockquote>
-<p>假设 c = gcd(a,b),则存在m,n 使a = mc,b = nc;</p>
-<p>令r = a mod b,即存在k,使r = a-kb = mc - knc = (m-kn)c;</p>
-<p>故gcd(b,a mod b) = gcd(b,r) = gcd(nc,(m-kn)c) = gcd(n,m-kn)*c;</p>
-<p>假设d = gcd(n,m-kn), 则存在x,y,x 使n = xd, m-kn = yd; 故m = yd+kn = yd+kxd = (y+kx)d;</p>
-<p>故有a = mc = (y+kx)dc, b = nc = xdc; 可得 gcd(a,b) = gcd((y+kx)dc,xdc) = dc;</p>
-<p>由于gcd(a,b) = c, 故d = 1;</p>
-<p>即gcd(n,m-kn) = 1, 故可得gcd(b,a mod b) = c;</p>
-<p>故得证gcd(a,b) = gcd(b,a mod b).</p>
-</blockquote>
-<h3 id="go语言实现">go语言实现</h3>
-<pre><code>func gcd(m, n int) int {
-	if n &gt; m {
-		m, n = n, m
-	}
-	for r := m % n; r != 0; r = m % n {
-		m, n = n, r
-	}
-	return n
-}
+                <h4 id="rancher-server--默认启动会重外网拉取相关数据">rancher server  默认启动会重外网拉取相关数据</h4>
+<ul>
+<li>CATTLE_UI_INDEX = local     使用本地的ui</li>
+<li>CATTLE_SYSTEM_CATALOG = bundled   应用商店使用内置的不用去网上同步</li>
+</ul>
+<pre><code>docker run  --rm -p 8080:80 -p 8443:443    -e CATTLE_SYSTEM_CATALOG=bundled -e CATTLE_UI_INDEX=local  dr.kunlun:5000/rancher/rancher:v2.3.5
 </code></pre>
             </div>
         </article>
@@ -169,12 +139,12 @@
 
         <div class="post-info">
                 <p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="/tags/algorithm">algorithm</a></span><span class="tag"><a href="/tags/golang">golang</a></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="/tags/k8s">k8s</a></span><span class="tag"><a href="/tags/rancher">rancher</a></span>
                 </p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-04-14 11:42 &#43;0800</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-04-16 12:56 &#43;0800</p>
         </div>
 
         
@@ -186,18 +156,11 @@
 
                 <div class="pagination__buttons">
                     
-                        <span class="button previous">
-                            <a href="/posts/2020/04/rancher%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/">
-                                <span class="button__icon">←</span>
-                                <span class="button__text">Rancher离线安装问题</span>
-                            </a>
-                        </span>
-                    
 
                     
                         <span class="button next">
-                            <a href="/posts/2020/04/centos7-%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/">
-                                <span class="button__text">Centos7 内核升级</span>
+                            <a href="/posts/2020/04/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/">
+                                <span class="button__text">欧几里得算法</span>
                                 <span class="button__icon">→</span>
                             </a>
                         </span>

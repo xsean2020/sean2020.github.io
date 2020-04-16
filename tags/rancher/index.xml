@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>k8s on 老码识图</title>
-    <link>/tags/k8s/</link>
-    <description>Recent content in k8s on 老码识图</description>
+    <title>rancher on 老码识图</title>
+    <link>/tags/rancher/</link>
+    <description>Recent content in rancher on 老码识图</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 16 Apr 2020 12:56:13 +0800</lastBuildDate>
     
-	<atom:link href="/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/rancher/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>/posts/2020/04/rancher%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/</guid>
       <description>rancher server 默认启动会重外网拉取相关数据  CATTLE_UI_INDEX = local 使用本地的ui CATTLE_SYSTEM_CATALOG = bundled 应用商店使用内置的不用去网上同步  docker run --rm -p 8080:80 -p 8443:443 -e CATTLE_SYSTEM_CATALOG=bundled -e CATTLE_UI_INDEX=local dr.kunlun:5000/rancher/rancher:v2.3.5 </description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description>程序猿  此博客仅记录今后工作中遇到的一些问题， 一切归零重头再续。。。 </description>
     </item>
     
   </channel>

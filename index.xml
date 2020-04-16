@@ -13,12 +13,11 @@
     
     <item>
       <title>Rancher离线安装问题</title>
-      <link>/post/rancher_offile/</link>
+      <link>/posts/2020/04/rancher%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 16 Apr 2020 12:56:13 +0800</pubDate>
       
-      <guid>/post/rancher_offile/</guid>
-      <description>rancher server 默认启动会重外网拉取相关数据  CATTLE_UI_INDEX = local 使用本地的ui CATTLE_SYSTEM_CATALOG = bundled 应用商店使用内置的不用取网上同步
- docker run --rm -p 8080:80 -p 8443:443 -e CATTLE_SYSTEM_CATALOG=bundled -e CATTLE_UI_INDEX=local dr.kunlun:5000/rancher/rancher:v2.3.5 </description>
+      <guid>/posts/2020/04/rancher%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/</guid>
+      <description>rancher server 默认启动会重外网拉取相关数据  CATTLE_UI_INDEX = local 使用本地的ui CATTLE_SYSTEM_CATALOG = bundled 应用商店使用内置的不用去网上同步  docker run --rm -p 8080:80 -p 8443:443 -e CATTLE_SYSTEM_CATALOG=bundled -e CATTLE_UI_INDEX=local dr.kunlun:5000/rancher/rancher:v2.3.5 </description>
     </item>
     
     <item>
